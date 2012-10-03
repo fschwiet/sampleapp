@@ -10,24 +10,26 @@ describe "StaticPages" do
       page.should have_content("Sample App");
     end
 
+    let(:pageTitle) { "Ruby on Rails Sample App |"}
+
     describe "Home" do
       it "includes title" do
         visit '/static_pages/home';
-        page.should have_selector('title', :text => "Ruby on Rails Sample App | Home")
+        page.should have_selector('title', :text => "#{pageTitle} Home")
       end
     end
     
     describe "About" do
       it "includes title" do
         visit '/static_pages/about';
-        page.should have_selector('title', :text => "Ruby on Rails Sample App | About")
+        page.should have_selector('title', :text => "#{pageTitle} About")
       end
     end
     
     describe "Help" do
       it "includes title" do
         visit '/static_pages/help';
-        page.should have_selector('title', :text => "Ruby on Rails Sample App | Help")
+        page.should have_selector('title', :text => "#{pageTitle} Help")
       end
     end
 
